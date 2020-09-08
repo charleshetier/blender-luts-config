@@ -1,17 +1,22 @@
 {
   "compilerOptions": {
+    "target": "ES5",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "module": "commonjs",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
     "sourceMap": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "outDir": "dist",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "paths": {
-      "*": ["node_modules/*"]
+      "*": ["node_modules/*"],
+      "states/*": ["states/*"],
+      "states": ["states"]
     }
   },
   "include": [

@@ -1,4 +1,6 @@
 import { app, BrowserWindow } from 'electron';
+import * as path from 'path';
+
 declare const MAIN_WINDOW_WEBPACK_ENTRY: Parameters<BrowserWindow['loadURL']>[0];
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -12,12 +14,21 @@ const createWindow = (): void => {
     height: 600,
     width: 800,
     webPreferences: {
-      worldSafeExecuteJavaScript: true
+      worldSafeExecuteJavaScript: true,
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   });
 
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+
+  mainWindow.webContents.session.loadExtension(path.join(__dirname, '../../tools/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.8.2_0/'));
+  mainWindow.webContents.session.loadExtension(path.join(__dirname, '../../tools/Extensions/cgibknllccemdnfhfpmjhffpjfeidjga/5.0.0_0/'));
+
+  // BrowserWindow.addDevToolsExtension(
+  //     path.join(os.homedir(), '/Library/Application Support/Google/Chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.3.0_0')
+  // )
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
@@ -44,6 +55,7 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.

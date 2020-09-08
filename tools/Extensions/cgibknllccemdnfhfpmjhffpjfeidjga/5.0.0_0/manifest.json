@@ -1,0 +1,24 @@
+{
+   "background": {
+      "persistent": false,
+      "scripts": [ "bundles/background.bundle.js" ]
+   },
+   "content_scripts": [ {
+      "js": [ "bundles/content.bundle.js" ],
+      "matches": [ "\u003Call_urls>" ]
+   } ],
+   "content_security_policy": "script-src 'self' https://www.gstatic.com:* 'unsafe-eval'; object-src 'self'",
+   "description": "A Chrome extension that helps debug React applications by memorizing the state of components with every render.",
+   "devtools_page": "devtools.html",
+   "icons": {
+      "128": "assets/icon128.png",
+      "48": "assets/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiGIA2BVAuBxb9+QsvWK1cz1a7QO4HK6/IhzgNwbAhXZ5Ph0AsTnRuZvhH5Ln4S3W25RKUJKRb2lLHotm+Yzy8Cn6q3Zw5NQuBUJavnThS1PHEVHTf0wglYJa/YjZcUwl/WG2LqrB4J9JtpdO2mwG+KuNA1kqCmoLCe27rGyP09tquoyyiCe03VwlWBGYXtRaA0vqXpl3t4D9O1W8KGBB/7MhGGLyTToechLpE4aFqpfjmg50z2YB50zG+bMJom2OoEbr0OVsiTRv/GqjXO0j191qeJQbZ8oAXNQDMF34PCF+3MIsMaL/NYDPTQ9u6P+kwRD0I4m+FUa2PTrrWLuvqQIDAQAB",
+   "manifest_version": 2,
+   "name": "Reactime",
+   "permissions": [ "contextMenus", "tabs", "activeTab", "\u003Call_urls>" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "5.0.0",
+   "web_accessible_resources": [ "bundles/backend.bundle.js" ]
+}
