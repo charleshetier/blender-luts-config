@@ -1,3 +1,5 @@
+/// <reference path="./@types/electron-remote.d.ts" />
+
 import ReactDom from 'react-dom';
 import React from 'react';
 import { ConfigSelection } from './config-selection';
